@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Κατάστημα - Δεντροκοψιλιακός FC</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #119b11;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        .search-bar {
+            margin: 1em auto;
+            text-align: center;
+        }
+        .search-bar input[type="text"] {
+            padding: 0.8em;
+            width: 60%;
+            border: 2px solid #119b11;
+            border-radius: 30px;
+            font-size: 1em;
+        }
+        .search-bar button {
+            padding: 0.8em 1.5em;
+            background-color: #119b11;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-left: 0.5em;
+        }
+        .search-bar button:hover {
+            background-color: #0e7f0e;
+        }
+        .store-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 2em;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .product {
+            background-color: #fff;
+            padding: 1.5em;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .product h3 {
+            color: #119b11;
+        }
+        .product p {
+            font-size: 1.1em;
+            color: #333;
+        }
+        .product .price {
+            font-size: 1.4em;
+            color: #9a4d01;
+            font-weight: bold;
+        }
+        .btn-buy {
+            display: inline-block;
+            margin-top: 1em;
+            padding: 0.8em 1.5em;
+            background-color: #119b11;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+        }
+        .btn-buy:hover {
+            background-color: #0e7f0e;
+        }
+        .btn-back {
+            display: block;
+            margin: 2em auto;
+            padding: 0.8em 1.5em;
+            background-color: #119b11;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            text-align: center;
+            width: fit-content;
+        }
+        .btn-back:hover {
+            background-color: #0e7f0e;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .no-results {
+            text-align: center;
+            color: #9a4d01;
+            font-size: 1.5em;
+            display: none;
+        }
+        .easter-egg {
+            display: none;
+            text-align: center;
+            margin: 2em 0;
+        }
+        footer {
+            background-color: #9a4d01;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 2em;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ηλεκτρονικό Κατάστημα</h1>
+</header>
+
+<!-- Γραμμή Αναζήτησης -->
+<div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Αναζήτηση προϊόντων...">
+    <button onclick="searchProducts()">Αναζήτηση</button>
+</div>
+
+<!-- Μήνυμα όταν δεν υπάρχουν αποτελέσματα -->
+<p class="no-results" id="noResultsMessage">Δεν βρέθηκαν προϊόντα που να ταιριάζουν με την αναζήτησή σας.</p>
+
+<!-- Easter Egg -->
+<div class="easter-egg" id="easterEgg">
+    <img src="img/4.jpg" alt="Easter Egg" style="width:500px;height:auto;">
+    <p>¯\_(ツ)_/¯</p>
+</div>
+
+<div class="store-container" id="productList">
+    <div class="product">
+        <img src="img/fan.jpg" alt="Κάρτα Φιλάθλου">
+        <h3>Κάρτα Φιλάθλου</h3>
+        <p class="price">€1,20</p>
+        <a href="#" class="btn-buy">Αγορά</a>
+        <p>Μια ειδική κάρτα για τους φιλάθλους του Δεντροκοψιλιακού.</p>
+    </div>
+	<div class="product">
+        <img src="img/stickers.jpg" alt="Αυτοκόλλητα">
+        <h3>Αυτοκόλλητα</h3>
+        <p class="price">€0,99</p>
+        <a href="#" class="btn-buy">Αγορά</a>
+        <p>Ένα πακέτο με διάφορα αυτοκόλλητα του Δεντροκοψιλιακού.</p>
+    </div>
+    <div class="product">
+        <img src="img/shirt.jpg" alt="Μπλουζάκι">
+        <h3>Μπλουζάκι</h3>
+        <p class="price">€???</p>
+        <p style="color: red; font-style: italic;">Σύντομα διαθέσιμο!</p>
+        <a href="#" class="btn-buy">Αγορά</a>
+    </div>
+    <div class="product">
+        <img src="img/hoodie.jpg" alt="Φούτερ">
+        <h3>Φούτερ</h3>
+        <p class="price">€???</p>
+        <p style="color: red; font-style: italic;">Σύντομα διαθέσιμο!</p>
+        <a href="#" class="btn-buy">Αγορά</a>
+    </div>
+    <div class="product">
+        <img src="img/coming_soon.gif" alt="Κασκόλ">
+        <h3>Κασκόλ</h3>
+        <p class="price">€???</p>
+        <p style="color: red; font-style: italic;">Σύντομα διαθέσιμο!</p>
+        <a href="#" class="btn-buy">Αγορά</a>
+    </div>
+    <div class="product">
+        <img src="img/coming_soon.gif" alt="Σημαία">
+        <h3>Σημαία</h3>
+        <p class="price">€???</p>
+        <p style="color: red; font-style: italic;">Σύντομα διαθέσιμο!</p>
+        <a href="#" class="btn-buy">Αγορά</a>
+    </div>
+</div>
+
+<!-- Κουμπί Επιστροφής στην Αρχική -->
+<a href="index.html" class="btn-back">Επιστροφή στην Αρχική</a>
+
+<footer>
+    <p>&copy; 2024 Δεντροκοψιλιακός FC. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<script>
+    function searchProducts() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const products = document.querySelectorAll('.product');
+        const easterEgg = document.getElementById('easterEgg');
+        let found = false;
+
+        // Έλεγχος για Easter Egg
+        if (input === '4') {
+            easterEgg.style.display = 'block';
+            products.forEach(product => product.style.display = 'none');
+            document.getElementById('noResultsMessage').style.display = 'none';
+            return;
+        } else {
+            easterEgg.style.display = 'none';
+        }
+
+        products.forEach(product => {
+            const title = product.querySelector('h3').textContent.toLowerCase();
+            if (title.includes(input)) {
+                product.style.display = 'block';
+                found = true;
+            } else {
+                product.style.display = 'none';
+            }
+        });
+
+        // Εμφάνιση ή απόκρυψη του μηνύματος "Δεν βρέθηκαν αποτελέσματα"
+        document.getElementById('noResultsMessage').style.display = found ? 'none' : 'block';
+    }
+</script>
+
+</body>
+</html>
