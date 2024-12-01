@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Δεντροκοψιλιακός FC</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background: linear-gradient(rgba(17, 155, 17, 0.9), rgba(154, 77, 1, 0.9)), url('https://via.placeholder.com/1920x500') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 4em 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            text-shadow: 2px 2px 5px #000;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #9a4d01;
+            padding: 0.5em 0;
+        }
+        nav a {
+            color: white;
+            padding: 1em 2em;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 20px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            background-color: #704001;
+            transform: scale(1.1);
+        }
+        .hero {
+            text-align: center;
+            color: white;
+            padding: 5em 2em;
+            background: linear-gradient(to bottom, rgba(17, 155, 17, 0.7), rgba(154, 77, 1, 0.7)), url('https://via.placeholder.com/1920x600') center/cover no-repeat;
+            animation: zoomIn 2s ease-in-out;
+        }
+        .hero h1 {
+            font-size: 4em;
+            text-shadow: 2px 2px 8px #000;
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin-top: 0.5em;
+        }
+        .content {
+            padding: 4em 2em;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .content h2 {
+            color: #119b11;
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+        .content p {
+            font-size: 1.2em;
+            color: #333;
+        }
+        .btn {
+            display: inline-block;
+            padding: 1em 2em;
+            margin-top: 1em;
+            background-color: #119b11;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 30px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .btn:hover {
+            background-color: #0e7f0e;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        footer {
+            background-color: #9a4d01;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Καλώς ήρθατε στον Δεντροκοψιλιακό FC!</h1>
+</header>
+
+<nav>
+    <a href="#home">Αρχική</a>
+    <a href="#news">Νέα</a>
+    <a href="#team">Η Ομάδα</a>
+    <a href="contact.html">Επικοινωνία</a>
+</nav>
+
+<section class="hero">
+    <img src="logo.png" alt="Λογότυπο Δεντροκοψιλιακός" style="width: 150px; height: auto;">
+    <h1>Δεντροκοψιλιακός FC</h1>
+    <p>Η ομάδα που συνδυάζει πάθος και ιστορία!</p>
+    <a href="#news" class="btn">Δείτε τα Νέα</a>
+</section>
+
+<section id="news" class="content">
+    <h2>Νέα της Ομάδας</h2>
+    <p>Μείνετε συντονισμένοι για τα τελευταία νέα και τις εξελίξεις της ομάδας.</p>
+    <article class="news-article" style="background-color: #ffffff; padding: 2em; margin: 2em auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); max-width: 800px; text-align: left;">
+        <h3 style="color: #119b11;">Σημαντική αλλαγή στην ονομασία αλλά και στο λογότυπο της ομάδας!</h3>
+        <p style="color: #555; font-size: 1em;">30 Νοεμβρίου 2024</p>
+        <p style="font-size: 1.2em;">Διαπιστώθηκε, μετά από τόσο καιρό, πως η σωστή ορθογραφία της λέξης <i>Δεντροκοψηλιακός</i> δεν είναι με <i>η</i>, αλλά με <i>ι</i>, καθώς προέρχεται από <i>δέντρο</i>+<i>κόψιμο</i> και όχι <i>κόψημο</i>. Έτσι, η ομάδα άλλαξε την ορθογραφία σε <i>Δέντροκοψιλιακός</i>, αλλά επίσης ελαφρά το λογότυπο.</p>
+        <a href="#" style="display: inline-block; margin-top: 1em; padding: 0.8em 1.5em; background-color: #119b11; color: white; text-decoration: none; border-radius: 5px;">Διαβάστε περισσότερα</a>
+    </article>
+</section>
+
+<footer>
+    <p>&copy; 2024 Δεντροκοψιλιακός FC. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
