@@ -3,135 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Επικοινωνία - Δεντροκοψιλιακός FC</title>
+    <title>Κατάστημα - Δεντροκοψιλιακός FC</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #f0f0f5;
+            background-color: #f5f5f5;
         }
         header {
             background-color: #119b11;
             color: white;
-            padding: 1.5em;
             text-align: center;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            padding: 1em 0;
         }
-        .contact-container {
-            padding: 3em 2em;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            max-width: 1100px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        .search-bar {
+            margin: 1em auto;
+            text-align: center;
         }
-        .contact-info {
-            width: 45%;
-            margin-bottom: 2em;
+        .search-bar input[type="text"] {
+            padding: 0.8em;
+            width: 60%;
+            border: 2px solid #119b11;
+            border-radius: 30px;
+            font-size: 1em;
         }
-        .contact-info h2 {
-            color: #9a4d01;
-            margin-bottom: 1em;
-        }
-        .contact-info p {
-            font-size: 1.2em;
-            margin: 1em 0;
-            display: flex;
-            align-items: center;
-        }
-        .contact-info a {
-            color: #119b11;
-            text-decoration: none;
-            font-weight: bold;
+        .search-bar button {
+            padding: 0.8em 1.5em;
+            background-color: #119b11;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1em;
+            cursor: pointer;
             margin-left: 0.5em;
         }
-        .contact-info a:hover {
-            text-decoration: underline;
+        .search-bar button:hover {
+            background-color: #0e7f0e;
         }
-        .contact-info i {
-            font-size: 1.5em;
-            color: #9a4d01;
+        .store-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 2em;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        iframe {
+        .product {
+            background-color: #fff;
+            padding: 1.5em;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .product img {
             width: 100%;
-            height: 300px;
-            border: 0;
+            height: auto;
             border-radius: 10px;
         }
-        .btn-back {
-            display: block;
-            width: fit-content;
-            margin: 2em auto;
-            padding: 1em 2em;
+        .product h3 {
+            color: #119b11;
+        }
+        .product p {
+            font-size: 1.1em;
+            color: #333;
+        }
+        .product .price {
+            font-size: 1.4em;
+            color: #9a4d01;
+            font-weight: bold;
+        }
+        .btn-buy {
+            display: inline-block;
+            margin-top: 1em;
+            padding: 0.8em 1.5em;
             background-color: #119b11;
             color: white;
             text-decoration: none;
-            font-size: 1.2em;
             border-radius: 30px;
+            transition: background-color 0.3s;
+        }
+        .btn-buy:hover {
+            background-color: #0e7f0e;
+        }
+        .btn-back {
+            display: block;
+            margin: 2em auto;
+            padding: 0.8em 1.5em;
+            background-color: #119b11;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.2em;
             transition: background-color 0.3s, box-shadow 0.3s;
             text-align: center;
+            width: fit-content;
         }
         .btn-back:hover {
             background-color: #0e7f0e;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
+        .no-results {
+            text-align: center;
+            color: #9a4d01;
+            font-size: 1.5em;
+            display: none;
+        }
+        .easter-egg {
+            display: none;
+            text-align: center;
+            margin: 2em 0;
+        }
         footer {
             background-color: #9a4d01;
             color: white;
             text-align: center;
-            padding: 1.5em 0;
+            padding: 1em 0;
             margin-top: 2em;
-            box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
         }
+		.centered-message {
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+    margin: 2em 0;
+}
+
+.centered-message a {
+    color: #119b11;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.centered-message a:hover {
+    color: #0e7f0e;
+}
+
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
 <header>
-    <h1>Επικοινωνήστε μαζί μας</h1>
+    <h1>Ηλεκτρονικό Κατάστημα</h1>
 </header>
 
-<div class="contact-container">
-    <!-- Πληροφορίες Επικοινωνίας -->
-    <div class="contact-info">
-        <h2>Πληροφορίες Επικοινωνίας</h2>
-        <p><i class="fas fa-map-marker-alt"></i>
-            <a href="https://www.google.com/maps/place/%CE%9A%CE%BF%CF%88%CE%B7%CE%BB%CE%BF%CE%B4%CE%B5%CE%BD%CF%84%CF%81%CE%B9%CE%B1%CE%BA%CF%8C+%CE%A3%CF%84%CE%AC%CE%B4%CE%B9%CE%BF/@39.3631266,22.9217288,560m/data=!3m1!1e3!4m14!1m7!3m6!1s0x14a76d00689ea041:0x3ccdfa41050da0a8!2zzprOv8-IzrfOu86_zrTOtc69z4TPgc65zrHOus-MIM6jz4TOrM60zrnOvw!8m2!3d39.3631225!4d22.9243037!16s%2Fg%2F11wfqj560_!3m5!1s0x14a76d00689ea041:0x3ccdfa41050da0a8!8m2!3d39.3631225!4d22.9243037!16s%2Fg%2F11wfqj560_?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D">
-                Οδός Καράτασου 1, Βόλος
-            </a>
-        </p>
-        <p><i class="fas fa-phone"></i>
-            <a href="tel:">Μή διαθέσιμο προς το παρόν.</a>
-        </p>
-        <p><i class="fas fa-envelope"></i>
-            <a href="mailto:dentrokopsiliakos@gmail.com">dentrokopsiliakos@gmail.com</a>
-        </p>
-        <p><i class="fab fa-instagram"></i>
-            <a href="https://www.instagram.com/dentrokopsiliakos" target="_blank">
-                Ακολουθήστε μας στο Instagram
-            </a>
-        </p>
-    </div>
+<!-- Γραμμή Αναζήτησης -->
+<div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Αναζήτηση προϊόντων...">
+    <button onclick="searchProducts()">Αναζήτηση</button>
+</div>
 
-    <!-- Χάρτης Google Maps -->
-    <div class="contact-info">
-        <h2>Πού θα μας βρείτε:</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2438.0342507059804!2d22.921728774844787!3d39.3631266190919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a76d00689ea041%3A0x3ccdfa41050da0a8!2zzprOv8-IzrfOu86_zrTOtc69z4TPgc65zrHOus-MIM6jz4TOrM60zrnOvw!5e1!3m2!1sel!2sgr!4v1732991592777!5m2!1sel!2sgr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<!-- Μήνυμα όταν δεν υπάρχουν αποτελέσματα -->
+<p class="no-results" id="noResultsMessage">Δεν βρέθηκαν προϊόντα που να ταιριάζουν με την αναζήτησή σας.</p>
+
+<!-- Easter Egg -->
+<div class="easter-egg" id="easterEgg">
+    <img src="img/4.jpg" alt="Easter Egg" style="width:500px;height:auto;">
+    <p>¯\_(ツ)_/¯</p>
+</div>
+
+<div class="store-container" id="productList">
+    <div class="product">
+        <img src="img/fan.jpg" alt="Κάρτα Φιλάθλου">
+        <h3>Κάρτα Φιλάθλου</h3>
+        <p class="price">€1,20</p>
+        <a href="contact.html" class="btn-buy">Αγορά</a>
+        <p>Μια ειδική κάρτα για τους φιλάθλους του Δεντροκοψιλιακού.</p>
+    </div>
+	<div class="product">
+        <img src="img/stickers.jpg" alt="Αυτοκόλλητα">
+        <h3>Αυτοκόλλητα</h3>
+        <p class="price">€0,99</p>
+        <a href="contact.html" class="btn-buy">Αγορά</a>
+        <p>Ένα πακέτο με διάφορα αυτοκόλλητα του Δεντροκοψιλιακού.</p>
+    </div>
+    <div class="product">
+        <img src="img/shirt.jpg" alt="Μπλουζάκι">
+        <h3>Μπλουζάκι</h3>
+        <p class="price">€???</p>
+        <p style="color: red; font-style: italic;">Σύντομα διαθέσιμο!</p>
+        <a href="contact.html" class="btn-buy">Αγορά</a>
+    </div>
+    <div class="product">
+        <img src="img/hoodie.jpg" alt="Φούτερ">
+        <h3>Φούτερ</h3>
+        <p class="price">€???</p>
+        <p style="color: red; font-style: italic;">Σύντομα διαθέσιμο!</p>
+        <a href="contact.html" class="btn-buy">Αγορά</a>
+    </div>
+    <div class="product">
+        <img src="img/coming_soon.gif" alt="Κασκόλ">
+        <h3>Κασκόλ</h3>
+        <p class="price">€???</p>
+        <p style="color: red; font-style: italic;">Σύντομα διαθέσιμο!</p>
+        <a href="contact.html" class="btn-buy">Αγορά</a>
+    </div>
+    <div class="product">
+        <img src="img/coming_soon.gif" alt="Σημαία">
+        <h3>Σημαία</h3>
+        <p class="price">€???</p>
+        <p style="color: red; font-style: italic;">Σύντομα διαθέσιμο!</p>
+        <a href="contact.html" class="btn-buy">Αγορά</a>
     </div>
 </div>
 
 <!-- Κουμπί Επιστροφής στην Αρχική -->
 <a href="index.html" class="btn-back">Επιστροφή στην Αρχική</a>
 
+<p class="centered-message">
+    Για να συνεχίσετε με την αγορά ενός προϊόντος, 
+    <a href="contact.html">επικοινωνήστε μαζί μας</a>.
+</p>
+
 <footer>
     <p>&copy; 2024 Δεντροκοψιλιακός FC. Όλα τα δικαιώματα διατηρούνται.</p>
 </footer>
+
+<script>
+    function searchProducts() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const products = document.querySelectorAll('.product');
+        const easterEgg = document.getElementById('easterEgg');
+        let found = false;
+
+        // Έλεγχος για Easter Egg
+        if (input === '4') {
+            easterEgg.style.display = 'block';
+            products.forEach(product => product.style.display = 'none');
+            document.getElementById('noResultsMessage').style.display = 'none';
+            return;
+        } else {
+            easterEgg.style.display = 'none';
+        }
+
+        products.forEach(product => {
+            const title = product.querySelector('h3').textContent.toLowerCase();
+            if (title.includes(input)) {
+                product.style.display = 'block';
+                found = true;
+            } else {
+                product.style.display = 'none';
+            }
+        });
+
+        // Εμφάνιση ή απόκρυψη του μηνύματος "Δεν βρέθηκαν αποτελέσματα"
+        document.getElementById('noResultsMessage').style.display = found ? 'none' : 'block';
+    }
+</script>
 
 </body>
 </html>
