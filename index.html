@@ -33,6 +33,7 @@
             justify-content: center;
             background-color: #9a4d01;
             padding: 0.5em 0;
+            flex-wrap: wrap; /* Προσαρμόζει τα κουμπιά στην κινητή οθόνη */
         }
 
         nav a {
@@ -42,6 +43,7 @@
             font-size: 1.2em;
             border-radius: 20px;
             transition: background-color 0.3s, transform 0.3s;
+            margin: 0.5em; /* Προσθέτει κενό μεταξύ των στοιχείων */
         }
 
         nav a:hover {
@@ -157,6 +159,48 @@
             }
         }
 
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em; /* Μικραίνει το μέγεθος της επικεφαλίδας για κινητά */
+            }
+
+            nav {
+                flex-direction: column; /* Τοποθετεί τα κουμπιά σε κάθετη διάταξη */
+                padding: 1em 0;
+            }
+
+            nav a {
+                padding: 0.8em 1.5em;
+                font-size: 1.1em; /* Μικραίνει τα κουμπιά για κινητά */
+                width: 100%; /* Κάνει τα κουμπιά πλήρους πλάτους */
+                text-align: center; /* Κεντράρει το κείμενο στα κουμπιά */
+            }
+
+            .hero-logo {
+                width: 200px; /* Μειώνει το μέγεθος του λογότυπου */
+            }
+
+            .hero h1 {
+                font-size: 2.5em; /* Μειώνει την επικεφαλίδα */
+            }
+
+            .hero p {
+                font-size: 1.1em; /* Μειώνει το μέγεθος του κειμένου */
+            }
+
+            .content h2 {
+                font-size: 2em; /* Μειώνει το μέγεθος της επικεφαλίδας */
+            }
+
+            .content p {
+                font-size: 1.1em; /* Μειώνει το μέγεθος του κειμένου */
+            }
+
+            footer {
+                padding: 1em;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
