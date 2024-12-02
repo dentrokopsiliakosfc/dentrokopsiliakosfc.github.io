@@ -12,24 +12,29 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         header {
-            background: linear-gradient(rgba(17, 155, 17, 0.9), rgba(154, 77, 1, 0.9)), url('https://via.placeholder.com/1920x600') center/cover no-repeat;
+            background: linear-gradient(rgba(17, 155, 17, 0.9), rgba(154, 77, 1, 0.9)), 
+                        url('img/bg3.jpg') center/cover no-repeat;
             color: white;
             text-align: center;
             padding: 4em 0;
             animation: fadeIn 2s ease-in-out;
         }
+
         header h1 {
             font-size: 3.5em;
             margin: 0;
             text-shadow: 2px 2px 5px #000;
         }
+
         nav {
             display: flex;
             justify-content: center;
             background-color: #9a4d01;
             padding: 0.5em 0;
         }
+
         nav a {
             color: white;
             padding: 1em 2em;
@@ -38,39 +43,76 @@
             border-radius: 20px;
             transition: background-color 0.3s, transform 0.3s;
         }
+
         nav a:hover {
             background-color: #704001;
             transform: scale(1.1);
         }
+
         .hero {
             text-align: center;
             color: white;
             padding: 5em 2em;
-            background: linear-gradient(to bottom, rgba(17, 155, 17, 0.7), rgba(154, 77, 1, 0.7)), url('https://via.placeholder.com/1920x600') center/cover no-repeat;
+            background: linear-gradient(to bottom, rgba(17, 155, 17, 0.7), rgba(154, 77, 1, 0.7)), url('img/bg.png') center/cover no-repeat;
             animation: zoomIn 2s ease-in-out;
         }
+
+        .hero-logo {
+            width: 250px; /* Αυξήσαμε το μέγεθος του λογότυπου */
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Σκιά γύρω από το λογότυπο */
+        }
+
         .hero h1 {
-            font-size: 4em;
-            text-shadow: 2px 2px 8px #000;
+            font-size: 3em; /* Μεγαλώσαμε την επικεφαλίδα */
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Σκιά στην επικεφαλίδα */
         }
+
         .hero p {
-            font-size: 1.5em;
-            margin-top: 0.5em;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Σκιά στην περιγραφή */
         }
+
+        .hero .btn {
+            padding: 10px 20px;
+            background-color: #119b11;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Σκιά στο κουμπί */
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .hero .btn:hover {
+            background-color: #0e7f0e;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
         .content {
             padding: 4em 2em;
             text-align: center;
             background-color: #f4f4f4;
         }
+
         .content h2 {
             color: #119b11;
             font-size: 2.5em;
             margin-bottom: 0.5em;
+            text-align: center; /* Κεντράρισμα της επικεφαλίδας */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Σκιά στην επικεφαλίδα */
         }
+
         .content p {
             font-size: 1.2em;
             color: #333;
         }
+
         .btn {
             display: inline-block;
             padding: 1em 2em;
@@ -82,16 +124,19 @@
             border-radius: 30px;
             transition: background-color 0.3s, box-shadow 0.3s;
         }
+
         .btn:hover {
             background-color: #0e7f0e;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
+
         footer {
             background-color: #9a4d01;
             color: white;
             text-align: center;
             padding: 1em 0;
         }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -100,6 +145,7 @@
                 opacity: 1;
             }
         }
+
         @keyframes zoomIn {
             from {
                 transform: scale(0.8);
@@ -110,24 +156,29 @@
                 opacity: 1;
             }
         }
+
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
 <header>
-    <h1>Καλώς ήρθατε στον Δεντροκοψιλιακό FC!</h1>
+    <h1 style="font-size: 3em; color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); margin: 0;">
+    Καλώς ήρθατε στον Δεντροκοψιλιακό FC!
+    </h1>
 </header>
 
 <nav>
-    <a href="#home">Αρχική</a>
-    <a href="#news">Νέα</a>
-    <a href="about.html">Η Ομάδα</a>
-    <a href="contact.html">Επικοινωνία</a>
-    <a href="store.html">Κατάστημα</a> <!-- Νέο κουμπί για το Store -->
+    <a href="#home"><i class="fas fa-home" style="margin-right: 10px;"></i>ΑΡΧΙΚΗ</a>
+    <a href="#news"><i class="fas fa-newspaper" style="margin-right: 10px;"></i>ΝΕΑ</a>
+    <a href="about.html"><i class="fas fa-info-circle" style="margin-right: 10px;"></i>Η ΟΜΑΔΑ</a>
+    <a href="contact.html"><i class="fas fa-envelope" style="margin-right: 10px;"></i>ΕΠΙΚΟΙΝΩΝΙΑ</a>
+    <a href="store.html"><i class="fas fa-store" style="margin-right: 10px;"></i>ΚΑΤΑΣΤΗΜΑ</a> <!-- Νέο κουμπί για το Store -->
+	<a href="controlpanel.html"><i class="fas fa-lock" style="margin-right: 10px;"></i>ΠΙΝΑΚΑΣ ΕΛΕΓΧΟΥ</a> <!-- Νέο κουμπί για το Store -->
 </nav>
 
 <section class="hero">
-    <img src="img\logo.png" alt="Λογότυπο Δεντροκοψιλιακός" style="width: 200px; height: auto;">
+    <img src="img/logo.png" alt="Λογότυπο Δεντροκοψιλιακός" class="hero-logo">
     <h1>Δεντροκοψιλιακός FC</h1>
     <p>Η ομάδα που συνδυάζει πάθος και ιστορία!</p>
     <a href="#news" class="btn">Δείτε τα Νέα</a>
