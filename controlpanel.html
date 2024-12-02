@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Πίνακας Ελέγχου - Δεντροκοψιλιακός FC</title>
+    <link rel="icon" href="img\favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #119b11;
+            color: white;
+            padding: 1.5em;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3em;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h1 {
+            color: #119b11;
+            font-size: 2.5em;
+            margin-bottom: 1em;
+        }
+
+        label {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+            display: block;
+        }
+
+        input[type="password"] {
+            padding: 0.8em;
+            font-size: 1.2em;
+            width: 100%;
+            margin-bottom: 1.5em;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 1em 2em;
+            background-color: #119b11;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0e7f0e;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 1.1em;
+            margin-top: 1em;
+        }
+
+        #main-content {
+            display: none;
+            padding: 2em;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            margin-top: 2em;
+        }
+
+        .btn-back {
+            display: block;
+            width: fit-content;
+            margin: 2em auto;
+            padding: 1em 2em;
+            background-color: #119b11;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 30px;
+            text-align: center;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-back:hover {
+            background-color: #0e7f0e;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background-color: #9a4d01;
+            color: white;
+            text-align: center;
+            padding: 1.5em 0;
+            margin-top: 2em;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1><i class="fas fa-lock" style="margin-right: 10px;"></i>Πίνακας Ελέγχου</h1>
+</header>
+<br><br>
+<div class="container">
+    <h1>Είσοδος Διαχειριστή</h1>
+    <p>Για να αποκτήσετε πρόσβαση στον πίνακα ελέγχου, παρακαλώ εισάγετε τον κωδικό διαχειριστή:</p>
+    <label for="admin-code">Κωδικός Διαχειριστή:</label>
+    <input type="password" id="admin-code" placeholder="Εισάγετε τον κωδικό" />
+    <button onclick="checkCode()">Είσοδος</button>
+    <p id="error-message" class="error-message"></p>
+</div>
+
+<div id="main-content">
+    <h2>Καλώς ήρθατε στον Πίνακα Ελέγχου</h2>
+    <p>Εδώ μπορείτε να διαχειριστείτε τα δεδομένα των φιλάθλων και άλλες ρυθμίσεις της ομάδας.</p>
+    <!-- Προσθέστε τα περιεχόμενα του πίνακα ελέγχου εδώ -->
+    <a href="index.html" class="btn-back">Επιστροφή στην Αρχική</a>
+</div>
+
+<footer>
+    <p>&copy; 2024 Δεντροκοψιλιακός FC. Όλα τα δικαιώματα διατηρούνται.</p>
+</footer>
+
+<script>
+    function checkCode() {
+        const enteredCode = document.getElementById('admin-code').value;
+        const correctCode = '67423';
+        const errorMessage = document.getElementById('error-message');
+        const mainContent = document.getElementById('main-content');
+
+        if (enteredCode === correctCode) {
+            errorMessage.style.display = 'none';
+            mainContent.style.display = 'block'; // Εμφάνιση του κυρίου περιεχομένου
+        } else {
+            errorMessage.style.display = 'block';
+            errorMessage.textContent = 'Λάθος κωδικός! Παρακαλώ προσπαθήστε ξανά.';
+        }
+    }
+</script>
+
+</body>
+</html>
