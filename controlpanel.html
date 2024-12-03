@@ -110,6 +110,80 @@
             margin-top: 2em;
         }
 
+        .search-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .search-container input {
+            padding: 0.8em;
+            font-size: 1.2em;
+            width: 80%;
+            border-radius: 5px;
+            border: 2px solid #ddd;
+            margin-bottom: 1.5em;
+        }
+
+        .card-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .card-info {
+            padding: 15px;
+            text-align: left;
+        }
+
+        .card-info p {
+            margin: 0.5em 0;
+            color: #333;
+        }
+
+        .card-info strong {
+            color: #119b11;
+        }
+
+        @keyframes shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-10px);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+            75% {
+                transform: translateX(-10px);
+            }
+        }
+
+        #error-message {
+            color: red;
+            display: none;
+            animation: shake 0.5s ease;
+        }
     </style>
 </head>
 <body>
@@ -117,6 +191,7 @@
 <header>
     <h1><i class="fas fa-lock" style="margin-right: 10px;"></i>Πίνακας Ελέγχου</h1>
 </header>
+
 <br><br>
 <div class="container">
     <h1>Είσοδος Διαχειριστή</h1>
@@ -127,11 +202,40 @@
     <p id="error-message" class="error-message"></p>
 </div>
 
+<a href="index.html" class="btn-back">Επιστροφή στην Αρχική</a>
+
 <div id="main-content">
-    <h2>Καλώς ήρθατε στον Πίνακα Ελέγχου</h2>
-    <p>Εδώ μπορείτε να διαχειριστείτε τα δεδομένα των φιλάθλων και άλλες ρυθμίσεις της ομάδας.</p>
-    <!-- Προσθέστε τα περιεχόμενα του πίνακα ελέγχου εδώ -->
-    <a href="index.html" class="btn-back">Επιστροφή στην Αρχική</a>
+    <h1 style="#119b11;" class="centered-text green">Καλώς ήρθατε στον Πίνακα Ελέγχου</h1>
+    <p style="#9a4d01;" class="centered-text brown">Εδώ μπορείτε να διαχειριστείτε τα δεδομένα των φιλάθλων και άλλες ρυθμίσεις της ομάδας.</p>
+    <br><h2 style="#119b11;" class="centered-text green">Κάρτες Φιλάθλου</h2>
+
+    <div class="search-container">
+        <input type="text" id="search-card" placeholder="Αναζητήστε με κωδικό κάρτας..." oninput="searchCard()">
+    </div>
+
+    <div class="card-list" id="card-list">
+        <!-- Κάρτα Φιλάθλου 1 -->
+        <div class="card" data-code="ΔΚ-12345">
+            <img src="img/pfp.jpg" alt="Φωτογραφία φιλάθλου" class="card-image">
+            <div class="card-info">
+                <p><strong>Κωδικός:</strong><br> ΔΚ-12345</p>
+                <p><strong>Ονοματεπώνυμο:</strong><br> ΟΝΟΜΑ ΕΠΩΝΥΜΟ</p>
+                <p><strong>Ημερομηνία Γέννησης:</strong><br> DD/MM/YYY</p>
+                <p><strong>Ημερομηνία Εγγραφής:</strong><br> DD/MM/YYY</p>
+            </div>
+        </div>
+
+        <!-- Κάρτα Φιλάθλου 2 -->
+        <div class="card" data-code="ΔΚ-67890">
+            <img src="img/pfp.jpg" alt="Φωτογραφία φιλάθλου" class="card-image">
+            <div class="card-info">
+                <p><strong>Κωδικός:</strong><br> ΔΚ-67890</p>
+                <p><strong>Ονοματεπώνυμο:</strong><br> ΟΝΟΜΑ ΕΠΩΝΥΜΟ</p>
+                <p><strong>Ημερομηνία Γέννησης:</strong><br> DD/MM/YYY</p>
+                <p><strong>Ημερομηνία Εγγραφής:</strong><br> DD/MM/YYY</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <footer>
@@ -152,6 +256,20 @@
             errorMessage.style.display = 'block';
             errorMessage.textContent = 'Λάθος κωδικός! Παρακαλώ προσπαθήστε ξανά.';
         }
+    }
+
+    function searchCard() {
+        const searchValue = document.getElementById('search-card').value.toLowerCase();
+        const cards = document.querySelectorAll('.card');
+        
+        cards.forEach(card => {
+            const cardCode = card.getAttribute('data-code').toLowerCase();
+            if (cardCode.includes(searchValue)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
     }
 </script>
 
