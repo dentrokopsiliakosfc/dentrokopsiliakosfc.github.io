@@ -82,6 +82,29 @@
             padding: 1.5em 0;
             margin-top: 2em;
         }
+		
+		nav {
+            display: flex;
+            justify-content: center;
+            background-color: #9a4d01;
+            padding: 0.5em 0;
+            flex-wrap: wrap; /* Προσαρμόζει τα κουμπιά στην κινητή οθόνη */
+        }
+
+        nav a {
+            color: white;
+            padding: 1em 2em;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 20px;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 0.5em; /* Προσθέτει κενό μεταξύ των στοιχείων */
+        }
+
+        nav a:hover {
+            background-color: #704001;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -89,6 +112,15 @@
 <header>
     <h1><i class="fas fa-info-circle" style="margin-right: 10px;"></i>Η Ομάδα μας</h1>
 </header>
+
+<nav>
+    <a href="index.html"><i class="fas fa-home" style="margin-right: 10px;"></i>ΑΡΧΙΚΗ</a>
+    <a href="#nigger"><i class="fas fa-newspaper" style="margin-right: 10px;"></i>ΝΕΑ</a>
+    <a href="about.html"><i class="fas fa-info-circle" style="margin-right: 10px;"></i>Η ΟΜΑΔΑ</a>
+    <a href="contact.html"><i class="fas fa-envelope" style="margin-right: 10px;"></i>ΕΠΙΚΟΙΝΩΝΙΑ</a>
+    <a href="store.html"><i class="fas fa-store" style="margin-right: 10px;"></i>ΚΑΤΑΣΤΗΜΑ</a> <!-- Νέο κουμπί για το Store -->
+	<a href="controlpanel.html"><i class="fas fa-lock" style="margin-right: 10px;"></i>ΠΙΝΑΚΑΣ ΕΛΕΓΧΟΥ</a> <!-- Νέο κουμπί για το Store -->
+</nav>
 
 <div class="team-container">
     <h2>Η Ιστορία μας</h2>
