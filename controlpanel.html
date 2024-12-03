@@ -82,6 +82,15 @@
             border-radius: 10px;
             margin-top: 2em;
         }
+		
+		.custom-line {
+    width: 80%;
+    height: 2px;
+    background-color: #119b11; /* Ή ό,τι χρώμα θέλετε */
+    margin: 20px auto; /* Κεντράρισμα και διάστημα */
+    border-radius: 5px; /* Στρογγυλεμένες γωνίες */
+}
+
 
         .btn-back {
             display: block;
@@ -103,12 +112,16 @@
         }
 
         footer {
-            background-color: #9a4d01;
-            color: white;
-            text-align: center;
-            padding: 1.5em 0;
-            margin-top: 2em;
-        }
+    background-color: #9a4d01;
+    color: white;
+    text-align: center;
+    padding: 1.5em 0;
+    margin-top: 2em;
+    clear: both;
+    position: relative;
+    overflow: hidden;
+}
+
 
         .search-container {
             margin-bottom: 20px;
@@ -184,6 +197,19 @@
             display: none;
             animation: shake 0.5s ease;
         }
+		
+		.centered-text {
+    text-align: center;
+}
+
+.green {
+    color: #119b11;
+}
+
+.brown {
+    color: #9a4d01;
+}
+
     </style>
 </head>
 <body>
@@ -205,38 +231,82 @@
 <a href="index.html" class="btn-back">Επιστροφή στην Αρχική</a>
 
 <div id="main-content">
-    <h1 style="#119b11;" class="centered-text green">Καλώς ήρθατε στον Πίνακα Ελέγχου</h1>
-    <p style="#9a4d01;" class="centered-text brown">Εδώ μπορείτε να διαχειριστείτε τα δεδομένα των φιλάθλων και άλλες ρυθμίσεις της ομάδας.</p>
-    <br><h2 style="#119b11;" class="centered-text green">Κάρτες Φιλάθλου</h2>
+    <h1 class="centered-text green">Καλώς ήρθατε στον Πίνακα Ελέγχου</h1>
+<p class="centered-text brown">Εδώ μπορείτε να διαχειριστείτε τα δεδομένα των φιλάθλων και άλλες ρυθμίσεις της ομάδας.</p>
+<div class="custom-line"></div>
+<h2 class="centered-text green">Κάρτες Φιλάθλου</h2>
 
-    <div class="search-container">
-        <input type="text" id="search-card" placeholder="Αναζητήστε με κωδικό κάρτας..." oninput="searchCard()">
-    </div>
 
-    <div class="card-list" id="card-list">
-        <!-- Κάρτα Φιλάθλου 1 -->
-        <div class="card" data-code="ΔΚ-12345">
-            <img src="img/pfp.jpg" alt="Φωτογραφία φιλάθλου" class="card-image">
-            <div class="card-info">
-                <p><strong>Κωδικός:</strong><br> ΔΚ-12345</p>
-                <p><strong>Ονοματεπώνυμο:</strong><br> ΟΝΟΜΑ ΕΠΩΝΥΜΟ</p>
-                <p><strong>Ημερομηνία Γέννησης:</strong><br> DD/MM/YYY</p>
-                <p><strong>Ημερομηνία Εγγραφής:</strong><br> DD/MM/YYY</p>
-            </div>
+<div class="search-container">
+    <input type="text" id="search-card" placeholder="Αναζητήστε με κωδικό κάρτας..." oninput="searchCard()">
+</div>
+
+<div class="card-list" id="card-list">
+    <div class="card" data-code="ΔΚ-Α001">
+        <img src="img/pfp.jpg" alt="Φωτογραφία φιλάθλου" class="card-image">
+        <div class="card-info">
+            <p><strong>Κωδικός:</strong><br> ΔΚ-Α001</p>
+            <p><strong>Ονοματεπώνυμο:</strong><br> ΝΙΚΟΛΑΟΣ ΜΑΡΟΥΓΚΑΣ</p>
+            <p><strong>Ημερομηνία Γέννησης:</strong><br> 10/06/2009</p>
+            <p><strong>Ημερομηνία Εγγραφής:</strong><br> 28/09/2024</p>
         </div>
-
-        <!-- Κάρτα Φιλάθλου 2 -->
-        <div class="card" data-code="ΔΚ-67890">
-            <img src="img/pfp.jpg" alt="Φωτογραφία φιλάθλου" class="card-image">
-            <div class="card-info">
-                <p><strong>Κωδικός:</strong><br> ΔΚ-67890</p>
-                <p><strong>Ονοματεπώνυμο:</strong><br> ΟΝΟΜΑ ΕΠΩΝΥΜΟ</p>
-                <p><strong>Ημερομηνία Γέννησης:</strong><br> DD/MM/YYY</p>
-                <p><strong>Ημερομηνία Εγγραφής:</strong><br> DD/MM/YYY</p>
-            </div>
+    </div>
+    <div class="card" data-code="ΔΚ-Α002">
+        <img src="img/pfp.jpg" alt="Φωτογραφία φιλάθλου" class="card-image">
+        <div class="card-info">
+            <p><strong>Κωδικός:</strong><br> ΔΚ-Α002</p>
+            <p><strong>Ονοματεπώνυμο:</strong><br> ΒΑΣΙΛΕΙΟΣ ΓΙΟΥΛΑΣ</p>
+            <p><strong>Ημερομηνία Γέννησης:</strong><br> 07/09/2012</p>
+            <p><strong>Ημερομηνία Εγγραφής:</strong><br> 28/09/2024</p>
+        </div>
+    </div>
+    <div class="card" data-code="ΔΚ-Α003">
+        <img src="img/pfp.jpg" alt="Φωτογραφία φιλάθλου" class="card-image">
+        <div class="card-info">
+            <p><strong>Κωδικός:</strong><br> ΔΚ-Α003</p>
+            <p><strong>Ονοματεπώνυμο:</strong><br> ΣΤΕΦΑΝΟΣ ΜΑΡΟΥΓΚΑΣ</p>
+            <p><strong>Ημερομηνία Γέννησης:</strong><br> 03/02/1974</p>
+            <p><strong>Ημερομηνία Εγγραφής:</strong><br> 28/09/2024</p>
+        </div>
+    </div>
+    <div class="card" data-code="ΔΚ-Α004">
+        <img src="img/pfp.jpg" alt="Φωτογραφία φιλάθλου" class="card-image">
+        <div class="card-info">
+            <p><strong>Κωδικός:</strong><br> ΔΚ-Α004</p>
+            <p><strong>Ονοματεπώνυμο:</strong><br> ΣΩΤΗΡΙΟΣ ΓΙΟΥΡΓΑΣ</p>
+            <p><strong>Ημερομηνία Γέννησης:</strong><br> 29/03/2008</p>
+            <p><strong>Ημερομηνία Εγγραφής:</strong><br> 28/09/2024</p>
+        </div>
+    </div>
+    <div class="card" data-code="ΔΚ-Α005">
+        <img src="img/pfp.jpg" alt="Φωτογραφία φιλάθλου" class="card-image">
+        <div class="card-info">
+            <p><strong>Κωδικός:</strong><br> ΔΚ-Α005</p>
+            <p><strong>Ονοματεπώνυμο:</strong><br> ΒΑΣΙΛΕΙΟΣ ΑΝΑΣΤΑΣΟΠΟΥΛΟΣ</p>
+            <p><strong>Ημερομηνία Γέννησης:</strong><br> 23/11/2009</p>
+            <p><strong>Ημερομηνία Εγγραφής:</strong><br> 21/11/2024</p>
+        </div>
+    </div>
+	<div class="card" data-code="ΔΚ-Α006">
+        <img src="img/pfp.jpg" alt="Φωτογραφία φιλάθλου" class="card-image">
+        <div class="card-info">
+            <p><strong>Κωδικός:</strong><br> ΔΚ-Α006</p>
+            <p><strong>Ονοματεπώνυμο:</strong><br> ΕΥΑΓΓΕΛΙΑ ΚΛΕΑΝΘΗ</p>
+            <p><strong>Ημερομηνία Γέννησης:</strong><br> 28/10/1977</p>
+            <p><strong>Ημερομηνία Εγγραφής:</strong><br> 21/11/2024</p>
+        </div>
+    </div>
+	<div class="card" data-code="ΔΚ-Α007">
+        <img src="img/pfp.jpg" alt="Φωτογραφία φιλάθλου" class="card-image">
+        <div class="card-info">
+            <p><strong>Κωδικός:</strong><br> ΔΚ-Α007</p>
+            <p><strong>Ονοματεπώνυμο:</strong><br> ΑΛΚΜΗΝΗ ΜΑΡΟΥΓΚΑ</p>
+            <p><strong>Ημερομηνία Γέννησης:</strong><br> 03/11/2013</p>
+            <p><strong>Ημερομηνία Εγγραφής:</strong><br> 21/11/2024</p>
         </div>
     </div>
 </div>
+
 
 <footer>
     <p>&copy; 2024 Δεντροκοψιλιακός FC. Όλα τα δικαιώματα διατηρούνται.</p>
